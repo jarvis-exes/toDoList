@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+#outer-container{
+  background-color: rgb(255, 254, 176);
+  width: 45%;
+  min-width: 500px;
+  margin: 0 auto;
+}
+
+#title-notification-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.title{
+  margin: 10px;
+}
+
+.bigL{
+  font-size: 50px;
+  font-weight: 700;
+  margin: -3px;
+}
+
+.smallL{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#notification{
+  margin: 5px;
+  padding: 5px;
+  height: fit-content;
+  color: white;
+  
+}
+
+@keyframes myAnimation {
+  0% { opacity: 0; }
+  25% { opacity: 0.5; }
+  50% { opacity: 1; }
+  75% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+#container {
+  width: 45%;
+  min-width: 450px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid #e5e5e5; */
+}
+ul li {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: inherit;
+  align-items: center;
+}
+ul li:hover {
+  background: #f3f3f3;
+}
+#list input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+#list label {
+  position: relative;
+  cursor: pointer;
+}
+
+#list label:before {
+  content:'';
+  background-color: transparent;
+  border: 2px solid #0ea801;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#list input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 1px 3px 0;
+  transform: rotate(45deg);
+}
+#list input:checked + label:before {
+  background: #02bb1b;
+} 
+#list input:checked + label {
+  text-decoration: line-through;
+  /* animation: lineThrough 4s infinite; */
+}
+.delete {
+  height: 28px;
+  padding: 5px 0px;
+  border-radius: 3px;
+}
+.delete:hover {
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.add-task {
+  width: 98%;
+  outline: none;
+  font-size: 15px;
+  padding: 11px;
+  border: 1px solid #f3f3f3;
+  margin: 5px;
+}
+#total-tasks {
+  margin-bottom: 20px;
+  font-size: 13px;
+  margin-left: 5px;
+  color: gray;
+}
+
+@keyframes lineThrough{
+  from{
+    text-decoration: none;
+  }
+  to{
+    text-decoration: line-through;
+  }
+}
+
+hr{
+  margin: 0px;
+}
