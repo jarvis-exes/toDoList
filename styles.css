@@ -3,10 +3,11 @@
   font-family: 'Poppins', sans-serif;
 }
 #outer-container{
-  background-color: rgb(255, 254, 176);
+  background-color: rgb(250, 249, 210);
   width: 45%;
   min-width: 500px;
   margin: 0 auto;
+  padding-bottom: 40px;
 }
 
 #title-notification-container{
@@ -16,6 +17,7 @@
 
 .title{
   margin: 10px;
+  margin-left: 35px;
 }
 
 .bigL{
@@ -65,10 +67,10 @@ ul li {
   align-items: center;
 }
 ul li:hover {
-  background: #f3f3f3;
+  background: #ffffff;
+  border-radius: 10px;
 }
 #list input {
-  padding: 0;
   height: initial;
   width: initial;
   margin-bottom: 0;
@@ -110,7 +112,7 @@ ul li:hover {
 } 
 #list input:checked + label {
   text-decoration: line-through;
-  /* animation: lineThrough 4s infinite; */
+  /* animation: lineThrough 1s; */
 }
 .delete {
   height: 28px;
@@ -129,21 +131,18 @@ ul li:hover {
   padding: 11px;
   border: 1px solid #f3f3f3;
   margin: 5px;
+  margin-bottom: 20px;
+}
+.total{
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px;
 }
 #total-tasks {
-  margin-bottom: 20px;
+  
   font-size: 13px;
   margin-left: 5px;
   color: gray;
-}
-
-@keyframes lineThrough{
-  from{
-    text-decoration: none;
-  }
-  to{
-    text-decoration: line-through;
-  }
 }
 
 hr{

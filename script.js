@@ -1,10 +1,11 @@
-(function(){
-    let tasks = [];
+(function(){ // inside IIFE function so that no ome can elements directly from DOM
+    let tasks = []; // Empty array for list of tasks
     const taskList = document.getElementById('list');
     const addTaskInput = document.getElementById('add');
     const tasksCounter = document.getElementById('tasks-counter');
     const notification = document.getElementById('notification');
 
+    // Function to get ToDO List items from given URL using API's
     async function fetchTodos(){
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/todos');
@@ -24,10 +25,11 @@
         for(let i=tasks.length-1; i>=0; i--){
             addTaskToDOM(tasks[i]);
         }
-
+        // This will populate the total number of tasks
         tasksCounter.innerHTML = tasks.length;
     }
 
+    // Function to add task to the webPage as an list item
     function addTaskToDOM(task){
         const li = document.createElement('li');
         const hr = document.createElement('hr');
@@ -43,6 +45,7 @@
        
     }
 
+    // Function to mark task as completed
     function toggleTask(taskId) {
         const task = tasks.filter(function(task){
             return task.id == Number(taskId);
@@ -80,11 +83,13 @@
     }
 
     //Function to display notifications
+    //Accepts two parameters, one is the text of notifcation and second is BG color of notification
     function showNotification(text, color) {
         notification.innerHTML = text;
         notification.style.backgroundColor = color;
         notification.style.animation ='myAnimation 3s linear';
         notification.style.display = 'inline';
+        // Calling this funtion to hide notification after some time
         hideNotification();
     }
 
@@ -138,6 +143,7 @@
         }
     }
 
+    //Function to start event listners and default functions
     function initializeApp(){
         fetchTodos();
         addTaskInput.addEventListener('keyup', handleInputKeypress);
