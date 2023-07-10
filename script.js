@@ -3,6 +3,7 @@
     const taskList = document.getElementById('list');
     const addTaskInput = document.getElementById('add');
     const tasksCounter = document.getElementById('tasks-counter');
+    const completedTasksCounter = document.getElementById('completed-tasks-counter');
     const notification = document.getElementById('notification');
 
     // Function to get ToDO List items from given URL using API's
@@ -27,6 +28,8 @@
         }
         // This will populate the total number of tasks
         tasksCounter.innerHTML = tasks.length;
+        // Calling Completed task function to render the total completed task
+        completedTasks(tasks);
     }
 
     // Function to add task to the webPage as an list item
@@ -80,6 +83,15 @@
             showNotification('Task Added', 'Green');
             return;
         }
+    }
+
+    // Function to count the completed tasks
+    function completedTasks(tasks){
+        const completedTask = tasks.filter(function(task){
+            return task.completed == true;
+        });
+
+        completedTasksCounter.innerHTML = completedTask.length;
     }
 
     //Function to display notifications
